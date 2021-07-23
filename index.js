@@ -26,7 +26,21 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+      let totalAnimalCount = 0
+      for (let i = 0; i < animals.length; i ++){
+        let animalCountValues = animals[i].count;
+          if (animals === []){
+              totalAnimalCount = 0 
+          } else {
+            totalAnimalCount += animalCountValues;
+          }
+
+      } return totalAnimalCount;
+
+}
+
+console.log(getTotalCount(animals));
 
 /**
  * FUNCTION DESCRIPTION
@@ -35,12 +49,38 @@ function getTotalCount(animals) {}
  * @param {Object[]} animals - An array of animal objects. See above for the shape of the object.
  * @returns {string[]} An array of strings, where each string is a kind of animal.
  *
+ * const animals = [
+  { kind: "Pig", count: 5 },
+  { kind: "Cow", count: 7 },
+  { kind: "Chicken", count: 11 },
+  { kind: "Horse", count: 1 },
+  { kind: "Dog", count: 2 },
+  { kind: "Cat", count: 2 },
+];
  * EXAMPLE
  * ------------------
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+      //let animalStr = "";
+      let allAnimalArr = [];
+      
+      for (let i = 0 ; i < animals.length; i++){
+          let animalKind = animals[i].kind;
+
+            allAnimalArr.push(animalKind);
+            
+
+          //if (animalKind < animals.length){
+            //animalStr += ", ";
+
+            } if (animals ===[]){
+            allAnimalArr = [];
+
+        }  return allAnimalArr;
+
+    }   console.log(getAllKinds(animals));
 
 /**
  * FUNCTION DESCRIPTION
@@ -59,7 +99,23 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+      let minimumCountArray = [];
+      let lowestcount = minimum;
+        for (let i = 0 ; i < animals.length; i++){
+            
+            let animalCount = animals[i].count;
+            let animalObj = animals[i];
+
+            if (animalCount >= lowestcount){
+                minimumCountArray.push(animalObj);
+
+            }
+
+        } return minimumCountArray;
+
+
+} console.log(filterByCountMinimum(animals, 5));
 
 /**
  * FUNCTION DESCRIPTION
@@ -73,7 +129,47 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+
+ //function getMostCommonAnimal(animals)
+  // let highestCountObj = animals[0].count;
+
+  // for (let i = 0 ; i < animals.length; i++){
+  //   let animalCount = animals[i].count;
+  //   if (animals === []){
+  //       let highestCountObj = null
+
+  //   }else if (animalCount < highestCountObj) {
+        
+  //               highestCountObj = animals[i];
+      
+  //             } return highestCountObj;
+
+  // }
+  //   //         let animalCount = animals[i].count;
+            
+  //   //             if (animals === []){
+
+ //} console.log(getMostCommonAnimal(animals));
+// function getMostCommonAnimal(animals) {
+
+//   let highestCountObj = animals[0].count;
+
+//     for (let i = 0 ; i < animals.length; i++){
+//         let animalCount = animals[i].count;
+        
+//             if (animals === []){
+
+//           highestCountObj = null;    
+        
+//         } else if (animalCount < highestCountObj) {
+        
+//           highestCountObj = animals[i];
+
+//         }
+//       return highestCountObj;
+//     }
+    
+//     }  
 
 // Do not change anything below this line.
 module.exports = {
